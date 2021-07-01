@@ -1,4 +1,4 @@
 theme: "hugo-PaperMod"
-baseURL: essbe.netlify.app/
+baseURL: 'essbe.netlify.app/'
 languageCode: en-us
 title: EssBee (SB)
