@@ -1,0 +1,19 @@
+{{ $content := .Content }}
+
+{{ $wikiLinks := $content | findRE "\\[\\[([^\\]\\[]+)\\]\\]" }}
+
+{{ $basePath := .Site.BaseURL | replaceRE "(//)([^/\\s]+/)(.*)" "/${3}" }}
+
+{{ range $wikiLinks }}
+    {{ $path := . | replaceRE "[\\[\\]]" "" }} 
+    {{ $absPath := printf "%s%s" $basePath $path }}
+    {{ $link := printf "<a href=\"%s\">[[%s]]</a>" $absPath $path }}
+    {{ $content = replace $content . $link | safeHTML }}
+{{ end }}
+
+{{ $content = $content | replaceRE "\\/_index.html" ".html" | replaceRE "_index" "index" }}
+
+{{ $content = $content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" "${1}<a hidden class=\"anchor\" aria-hidden=\"true\" href=\"#${2}\">#</a>${3}" }}
+
+{{ $content | safeHTML }}
+

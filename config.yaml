@@ -1,7 +1,7 @@
-theme: "hugo-PaperMod"
-baseURL: 'essbe.netlify.app'
+theme: "PaperMod"
+baseURL: 'essbee.netlify.app'
 languageCode: en-us
-title: EssBee (SB)
+title: EssBee
 paginate: 5
 
 enableRobotsTXT: true
@@ -14,13 +14,19 @@ googleAnalytics: UA-123-45
 minify:
     disableXML: true
     minifyOutput: true
+    
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: ExampleSite
-    description: "ExampleSite description"
-    keywords: [Blog, Portfolio, PaperMod]
-    author: Me
+    title: EssBee
+    description: "Thoughts and Notes of a Marine Biologist and Plant Physiology PhD student"
+    keywords: [Blog, Notes, Digital Garden, Marine Biology, Plant Physiology, Portfolio, PaperMod]
+    author: Sepehr Bardi
     # author: ["Me", "You"] # multiple authors
     images: ["<link or path of image for opengraph, twitter-cards>"]
     DateFormat: "January 2, 2006"
@@ -43,15 +49,16 @@ params:
     assets:
         # disableHLJS: true # to disable highlight.js
         # disableFingerprinting: true
-        favicon: "<link / abs url>"
-        favicon16x16: "<link / abs url>"
-        favicon32x32: "<link / abs url>"
-        apple_touch_icon: "<link / abs url>"
-        safari_pinned_tab: "<link / abs url>"
+        assets:
+         favicon: "static/favicon.ico"
+ #        favicon16x16:  "static/favicon-16x16.png"
+         favicon32x32:  "static/favicon-32x32.png"
+         apple_touch_icon:  "static/apple-touch-icon.png"
+         
 
     label:
-        text: "Home"
-        icon: /apple-touch-icon.png
+        text: "EssBee"
+       # icon: static/apple-touch-icon.png
         iconHeight: 35
 
     # profile-mode
@@ -71,14 +78,14 @@ params:
 
     # home-info mode
     homeInfoParams:
-        Title: "Hi there \U0001F44B"
-        Content: Welcome to my blog
+        Title: "Mind of a biologist"
+        Content: Welcome to EssBee (SB) - **Sepehr Bardi**'s digital garden. SB is a marine biologist and a plant physiology PhD student with interests in microbial symbioses and the deep ocean.
 
     socialIcons:
-        - name: twitter
-          url: "https://twitter.com/"
-        - name: stackoverflow
-          url: "https://stackoverflow.com"
+        - name: email
+          url: "sepehr.nik96@gmail.com"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/sepehrnik/"
         - name: github
           url: "https://github.com/sebardi"
 
@@ -112,17 +119,25 @@ params:
         keys: ["title", "permalink", "summary", "content"]
 menu:
     main:
-        - identifier: categories
-          name: categories
-          url: /categories/
-          weight: 10
-        - identifier: tags
-          name: tags
-          url: /tags/
+        - identifier: about
+          name: About
+          url: /about/
           weight: 20
-        - identifier: example
-          name: example.org
-          url: https://example.org
+        - identifier: categories
+          name: Categories
+          url: /categories/
+          weight: 40
+        - identifier: tags
+          name: Tags
+          url: /tags/
+          weight: 40
+        - identifier: search
+          name: Search
+          url: /search/
+          weight: 50
+        - identifier: notes
+          name: Notes
+          url: /note/
           weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
