@@ -1,5 +1,5 @@
 theme: "hugo-PaperMod"
-baseURL: 'essbee.netlify.app'
+baseURL: 'https://essbee.netlify.app'
 languageCode: en-us
 title: EssBee
 paginate: 5
@@ -50,15 +50,15 @@ params:
         # disableHLJS: true # to disable highlight.js
         # disableFingerprinting: true
         assets:
-         favicon: "static/favicon.ico"
- #        favicon16x16:  "static/favicon-16x16.png"
-         favicon32x32:  "static/favicon-32x32.png"
-         apple_touch_icon:  "static/apple-touch-icon.png"
+         favicon: "/favicon.ico"
+         favicon16x16: "/favicon-16x16.png"
+         favicon32x32: "/favicon-32x32.png"
+         apple_touch_icon: "/apple-touch-icon.png"
          
 
     label:
-        text: "EssBee"
-       # icon: static/apple-touch-icon.png
+        text: "EssBee "
+        icon: '/apple-touch-icon.png'
         iconHeight: 35
 
     # profile-mode
@@ -78,8 +78,8 @@ params:
 
     # home-info mode
     homeInfoParams:
-        Title: "Mind of a biologist"
-        Content: Welcome to EssBee (SB) - **Sepehr Bardi**'s digital garden. SB is a marine biologist and a plant physiology PhD student with interests in microbial symbioses and the deep ocean.
+        Title: "Mind of a biologist \U0001F331"
+        Content: Welcome to EssBee - **Sepehr Bardi**'s (SB) digital garden. SB is a marine biologist and a plant physiology PhD student with interests in microbial symbioses and the deep ocean.
 
     socialIcons:
         - name: email
@@ -139,6 +139,7 @@ menu:
           name: Notes
           url: /note/
           weight: 30
+          
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 # markup:
